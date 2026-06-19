@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useTheme } from "@/hooks/useTheme";
 import { tr } from "@/services/i18n";
@@ -6,10 +7,11 @@ import logoImg from "@/assets/logo.png";
 import "./Navbar.css";
 
 const NAV_LINKS = [
-  { href: "#leistungen", key: "nav.services" },
-  { href: "#ueber-uns", key: "nav.about" },
-  { href: "#bewertungen", key: "nav.reviews" },
-  { href: "#faq", key: "faq", label: "FAQ" },
+  { href: "#pakete", key: "nav.packages", to: "/" },
+  { href: "#leistungen", key: "nav.services", to: "/" },
+  { href: "#ueber-uns", key: "nav.about", to: "/" },
+  { href: "#bewertungen", key: "nav.reviews", to: "/" },
+  { href: "#faq", key: "faq", to: "/", label: "FAQ" },
 ] as const;
 
 export function Navbar() {
@@ -17,6 +19,9 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 55);
@@ -36,21 +41,36 @@ export function Navbar() {
     return () => document.removeEventListener("keydown", handler);
   }, [closeMobile]);
 
+  const handleNavClick = useCallback((href: string, to: string) => {
+    closeMobile();
+    if (to === "/" && isHome) {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(to + href);
+    }
+  }, [closeMobile, isHome, navigate]);
+
   return (
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`} id="navbar">
-        <a href="#" className="nav-logo">
+        <Link to="/" className="nav-logo">
           <img src={logoImg} alt="Golden Line Facility Management Logo" className="nav-logo-img" loading="lazy" />
           <div>
             <div className="logo-txt">Golden Line</div>
             <div className="logo-sub">Facility Management</div>
           </div>
-        </a>
+        </Link>
 
         <ul className="nav-links">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a href={link.href}>{link.key === "faq" ? "FAQ" : tr(lang, link.key)}</a>
+              <button
+                className="nav-link-btn"
+                onClick={() => handleNavClick(link.href, link.to)}
+              >
+                {link.key === "faq" ? "FAQ" : tr(lang, link.key)}
+              </button>
             </li>
           ))}
         </ul>
@@ -69,7 +89,12 @@ export function Navbar() {
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle dark mode">
             <div className="theme-track">{theme === "dark" ? "🌙" : "☀"}</div>
           </button>
-          <a href="#anfrage" className="nav-cta">{tr(lang, "nav.cta")}</a>
+          <button
+            className="nav-cta"
+            onClick={() => handleNavClick("#anfrage", "/")}
+          >
+            {tr(lang, "nav.cta")}
+          </button>
         </div>
 
         <button
@@ -82,29 +107,36 @@ export function Navbar() {
         </button>
       </nav>
 
-    <nav className={`mobile-menu ${mobileOpen ? "open" : ""}`} aria-label="Mobile navigation">
-      {NAV_LINKS.map((link) => (
-        <a key={link.href} href={link.href} onClick={closeMobile}>
-          {link.key === "faq" ? "FAQ" : tr(lang, link.key)}
-        </a>
-      ))}
-      <a href="#anfrage" onClick={closeMobile} className="mobile-cta">
-        {tr(lang, "nav.cta")} →
-      </a>
-      <div className="mobile-controls">
+      <nav className={`mobile-menu ${mobileOpen ? "open" : ""}`} aria-label="Mobile navigation">
+        {NAV_LINKS.map((link) => (
+          <button
+            key={link.href}
+            className="nav-link-btn"
+            onClick={() => handleNavClick(link.href, link.to)}
+          >
+            {link.key === "faq" ? "FAQ" : tr(lang, link.key)}
+          </button>
+        ))}
         <button
-          className={`lang-btn ${lang === "de" ? "active" : ""}`}
-          onClick={() => { setLang("de"); closeMobile(); }}
-        >🇩🇪 DE</button>
-        <button
-          className={`lang-btn ${lang === "en" ? "active" : ""}`}
-          onClick={() => { setLang("en"); closeMobile(); }}
-        >🇬🇧 EN</button>
-        <button className="theme-toggle theme-toggle-ml" onClick={toggleTheme} aria-label="Toggle dark mode">
-          <div className="theme-track">{theme === "dark" ? "🌙" : "☀"}</div>
+          className="mobile-cta"
+          onClick={() => handleNavClick("#anfrage", "/")}
+        >
+          {tr(lang, "nav.cta")} →
         </button>
-      </div>
-    </nav>
+        <div className="mobile-controls">
+          <button
+            className={`lang-btn ${lang === "de" ? "active" : ""}`}
+            onClick={() => { setLang("de"); closeMobile(); }}
+          >🇩🇪 DE</button>
+          <button
+            className={`lang-btn ${lang === "en" ? "active" : ""}`}
+            onClick={() => { setLang("en"); closeMobile(); }}
+          >🇬🇧 EN</button>
+          <button className="theme-toggle theme-toggle-ml" onClick={toggleTheme} aria-label="Toggle dark mode">
+            <div className="theme-track">{theme === "dark" ? "🌙" : "☀"}</div>
+          </button>
+        </div>
+      </nav>
     </>
   );
 }

@@ -5,6 +5,12 @@ import type { UspItem } from "@/types";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import "./About.css";
 
+const INFO_POINTS = [
+  { key: "about.point1" },
+  { key: "about.point2" },
+  { key: "about.point3" },
+] as const;
+
 const USPS: { icon: string; titleKey: string; descKey: string }[] = [
   { icon: "🔄", titleKey: "usp1.title", descKey: "usp1.desc" },
   { icon: "📋", titleKey: "usp2.title", descKey: "usp2.desc" },
@@ -32,7 +38,11 @@ export function About() {
           <div className="anim from-right">
             <div className="about-visual">
               <div className="about-img">
-                <div className="about-icon-bg">🏢</div>
+                <img
+                  src="/Ruckseite.png"
+                  alt="Golden Line Facility Management Logo"
+                  className="about-image"
+                />
                 <div className="about-overlay" />
                 <div className="about-caption">
                   <h3>GLFM</h3>
@@ -52,6 +62,11 @@ export function About() {
             </h2>
             <div className="title-bar" />
             <p className="about-desc">{tr(lang, "about.desc")}</p>
+            <ul className="about-points" aria-label={tr(lang, "about.points.label")}> 
+              {INFO_POINTS.map((point) => (
+                <li key={point.key}>{tr(lang, point.key)}</li>
+              ))}
+            </ul>
             <ul className="usp-list">
               {uspItems.map((usp, i) => (
                 <li

@@ -1,0 +1,237 @@
+.pkg-bg {
+  background: var(--bg);
+  transition: background 0.4s;
+}
+
+.pkg-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pkg-header .sec-sub {
+  margin: 0 auto;
+}
+
+.pkg-header .title-bar {
+  margin: 1rem auto 1.2rem;
+}
+
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+}
+
+.pkg-card {
+  background: linear-gradient(165deg, var(--card-bg) 0%, var(--surface2) 100%);
+  border-radius: var(--r);
+  padding: 2.3rem 1.9rem;
+  border: 1px solid var(--card-border);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+}
+
+.pkg-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: var(--r) var(--r) 0 0;
+  transition: height 0.3s;
+}
+
+.pkg-card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -70px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pkg-card.pkg-accent-blue::before {
+  background: linear-gradient(90deg, #2563EB, #3b82f6);
+}
+
+.pkg-card.pkg-accent-blue::after {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.17) 0%, rgba(37, 99, 235, 0) 70%);
+}
+
+.pkg-card.pkg-accent-green::before {
+  background: linear-gradient(90deg, #2d7a2d, #4ade80);
+}
+
+.pkg-card.pkg-accent-green::after {
+  background: radial-gradient(circle, rgba(45, 122, 45, 0.18) 0%, rgba(45, 122, 45, 0) 70%);
+}
+
+.pkg-card.pkg-accent-gold::before {
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+}
+
+.pkg-card.pkg-accent-gold::after {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0) 70%);
+}
+
+.pkg-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--sh-lg);
+}
+
+.pkg-card:hover::after {
+  opacity: 1;
+}
+
+.pkg-card.pkg-accent-blue:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.pkg-card.pkg-accent-green:hover {
+  border-color: rgba(45, 122, 45, 0.35);
+}
+
+.pkg-card.pkg-accent-gold:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+.pkg-card:hover::before {
+  height: 6px;
+}
+
+.pkg-icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.9rem;
+  display: block;
+  line-height: 1;
+  transition: filter 0.3s ease;
+}
+
+.pkg-card:hover .pkg-icon {
+  filter: drop-shadow(0 0 10px rgba(240, 165, 0, 0.45));
+}
+
+.pkg-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 11px;
+  border-radius: 50px;
+  margin-bottom: 0.9rem;
+  width: fit-content;
+}
+
+.pkg-accent-blue .pkg-tag {
+  background: #e8f2fb;
+  color: var(--blue);
+}
+
+.pkg-accent-green .pkg-tag {
+  background: #e8f6e8;
+  color: #2d7a2d;
+}
+
+.pkg-accent-gold .pkg-tag {
+  background: var(--accent-dim);
+  color: #7a5000;
+}
+
+[data-theme="dark"] .pkg-accent-blue .pkg-tag {
+  background: rgba(46, 109, 164, 0.25);
+  color: #6baee8;
+}
+
+[data-theme="dark"] .pkg-accent-green .pkg-tag {
+  background: rgba(45, 122, 45, 0.25);
+  color: #6ec46e;
+}
+
+[data-theme="dark"] .pkg-accent-gold .pkg-tag {
+  background: rgba(240, 165, 0, 0.18);
+  color: var(--gold);
+}
+
+.pkg-card h3 {
+  font-size: clamp(1.2rem, 1.7vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+[data-theme="dark"] .pkg-card h3 {
+  color: #c8deff;
+}
+
+.pkg-card p {
+  font-size: 0.97rem;
+  color: var(--text-mid);
+  line-height: 1.72;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.pkg-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 0.94rem;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, gap 0.2s, filter 0.2s;
+  align-self: flex-start;
+}
+
+.pkg-accent-blue .pkg-cta {
+  background: linear-gradient(135deg, #2563EB 0%, #3b82f6 100%);
+  color: #fff;
+}
+
+.pkg-accent-green .pkg-cta {
+  background: linear-gradient(135deg, #2d7a2d 0%, #4ade80 100%);
+  color: #fff;
+}
+
+.pkg-accent-gold .pkg-cta {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+  color: var(--navy);
+}
+
+.pkg-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+  gap: 10px;
+  filter: saturate(1.08);
+}
+
+.pkg-cta:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 50px;
+}
+
+.pkg-cta:active {
+  transform: translateY(0) scale(0.97);
+}
+
+@media (max-width: 768px) {
+  .pkg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pkg-card {
+    min-height: unset;
+  }
+}

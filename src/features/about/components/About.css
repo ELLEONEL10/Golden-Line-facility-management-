@@ -6,7 +6,7 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 4.5rem;
   align-items: center;
 }
 
@@ -17,17 +17,22 @@
 .about-img {
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  background: linear-gradient(135deg, #081326 0%, #12306a 56%, #2d61c9 100%);
   aspect-ratio: 4 / 5;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  box-shadow: var(--sh-lg);
 }
 
-.about-icon-bg {
-  font-size: 5.5rem;
-  opacity: 0.2;
+.about-image {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.28));
 }
 
 .about-overlay {
@@ -45,14 +50,15 @@
 }
 
 .about-caption h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.18rem;
+  font-weight: 800;
   color: #fff;
   margin-bottom: 0.2rem;
+  letter-spacing: -0.01em;
 }
 
 .about-caption p {
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   color: rgba(255, 255, 255, 0.65);
 }
 
@@ -76,7 +82,7 @@
 
 .ab-num {
   font-family: "Sora", sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--navy);
   line-height: 1;
@@ -90,8 +96,33 @@
 
 .about-desc {
   color: var(--text-mid);
-  font-size: 0.93rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  max-width: 58ch;
+  margin-bottom: 1rem;
+}
+
+.about-points {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1.6rem;
+}
+
+.about-points li {
+  background: linear-gradient(165deg, var(--card-bg) 0%, var(--surface2) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--navy);
+  box-shadow: var(--sh);
+}
+
+[data-theme="dark"] .about-points li {
+  color: #dde9ff;
 }
 
 .usp-list {
@@ -99,7 +130,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin: 1.8rem 0 2rem;
+  margin: 0.2rem 0 2rem;
 }
 
 .usp-item {
@@ -116,7 +147,7 @@
 .usp-ico {
   width: 44px;
   height: 44px;
-  background: var(--accent-dim);
+  background: linear-gradient(165deg, var(--accent-dim) 0%, rgba(255, 255, 255, 0.7) 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -132,10 +163,11 @@
 }
 
 .usp-body h4 {
-  font-size: 0.93rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
   color: var(--navy);
-  margin-bottom: 1px;
+  margin-bottom: 2px;
+  letter-spacing: -0.01em;
 }
 
 [data-theme="dark"] .usp-body h4 {
@@ -143,12 +175,56 @@
 }
 
 .usp-body p {
-  font-size: 0.83rem;
+  font-size: 0.91rem;
   color: var(--text-mid);
+  line-height: 1.65;
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.24);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(212, 175, 55, 0.32);
+  filter: saturate(1.05);
 }
 
 @media (max-width: 1024px) {
   .about-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    width: 76%;
+    height: 76%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    gap: 2rem;
+  }
+
+  .about-desc {
+    font-size: 0.98rem;
+  }
+
+  .about-points {
+    gap: 0.55rem;
+  }
+
+  .about-points li {
+    font-size: 0.8rem;
   }
 }
