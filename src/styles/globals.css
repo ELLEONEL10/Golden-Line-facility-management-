@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --navy:#0F1B2E; --gold:#D4AF37; --accent:#F0D761;
+  --accent-dim:rgba(212,175,55,0.14); --accent-glow:rgba(212,175,55,0.38);
+  --bg:#FFFFFF; --bg2:#FAF9F6; --bg3:#F3F1ED;
+  --surface:#FFFFFF; --surface2:#FAF9F6;
+  --text:#0F1B2E; --text-mid:#4A5C70; --text-soft:#8099B0;
+  --border:rgba(15,27,46,0.1); --border2:rgba(15,27,46,0.16);
+  --hero-from:#050A15; --hero-to:#0F1B2E;
+  --card-bg:#FFFFFF; --card-border:rgba(15,27,46,0.08);
+  --nav-bg:rgba(255,255,255,0.94); --nav-text:#4A5C70;
+  --modal-bg:#FFFFFF;
+  --r:16px; --r-sm:10px;
+  --sh:0 4px 24px rgba(15,27,46,0.08);
+  --sh-lg:0 16px 56px rgba(15,27,46,0.14);
+  --blue:#2563EB;
+}
+
+[data-theme="dark"] {
+  --bg:#07101D; --bg2:#0B1829; --bg3:#0F2038;
+  --surface:#0F1E32; --surface2:#142438;
+  --text:#DDE9FF; --text-mid:#8DAAC8; --text-soft:#4E6A88;
+  --border:rgba(80,140,220,0.1); --border2:rgba(80,140,220,0.18);
+  --hero-from:#030810; --hero-to:#091526;
+  --card-bg:#0F1E32; --card-border:rgba(80,140,220,0.09);
+  --nav-bg:rgba(7,16,29,0.95); --nav-text:#8DAAC8;
+  --modal-bg:#0F1E32;
+  --sh:0 4px 24px rgba(0,0,0,0.45); --sh-lg:0 16px 56px rgba(0,0,0,0.55);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden;line-height:1.7;transition:background .4s,color .4s;}
+h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;line-height:1.15;}
+a{color:inherit;text-decoration:none;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeRight{from{opacity:0;transform:translateX(-48px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.82)}to{opacity:1;transform:scale(1)}}
+@keyframes floatA{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-24px) rotate(5deg)}}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(20px) rotate(-4deg)}}
+@keyframes floatC{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.06)}}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.7)}70%{box-shadow:0 0 0 12px rgba(37,99,235,0)}}
+@keyframes lineGrow{from{width:0;opacity:0}to{width:64px;opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes gradShift{0%,100%{background-position:0% 60%}50%{background-position:100% 40%}}
+@keyframes borderGlow{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,0)}50%{box-shadow:0 0 24px 6px rgba(37,99,235,.28)}}
+@keyframes wiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes countPop{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes lineReveal{from{width:0;opacity:0}to{width:100%;opacity:1}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{width:0;left:0}to{width:100%;left:0}}
+
+.anim{opacity:0;transition:opacity .65s cubic-bezier(.22,.68,0,1.2),transform .65s cubic-bezier(.22,.68,0,1.2);}
+.anim.from-up{transform:translateY(48px);}
+.anim.from-down{transform:translateY(-32px);}
+.anim.from-left{transform:translateX(-48px);}
+.anim.from-right{transform:translateX(48px);}
+.anim.from-scale{transform:scale(0.86);}
+.anim.in{opacity:1!important;transform:none!important;}
+.anim:not(.in){opacity:0;}
+
+.section{padding:100px 0;position:relative;}
+.sec-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px;}
+button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+
+button:active:not(:disabled){transform:scale(0.97);}
+a:active{opacity:0.85;}
+
+.empty-state{text-align:center;padding:3rem 1rem;color:var(--text-soft);font-size:0.95rem;}
+.gdpr-link{color:var(--accent);cursor:pointer;background:none;border:none;font:inherit;text-decoration:underline;padding:0;}
+.gdpr-link:hover{color:var(--gold);}
+.mobile-cta{color:var(--gold);font-weight:700;}
+.theme-toggle-ml{margin-left:auto;}
+
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}
+}

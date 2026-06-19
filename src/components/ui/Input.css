@@ -1,0 +1,53 @@
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fg label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.fg input,
+.fg select,
+.fg textarea {
+  padding: 11px 14px;
+  border: 1.5px solid var(--border2);
+  border-radius: var(--r-sm);
+  font-size: 0.875rem;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.4s, color 0.4s;
+  outline: none;
+}
+
+.fg input:focus-visible,
+.fg select:focus-visible,
+.fg textarea:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.fg textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.fg .ferr {
+  color: #c53030;
+  font-size: 0.76rem;
+  display: none;
+}
+
+.fg.has-error input,
+.fg.has-error select,
+.fg.has-error textarea {
+  border-color: #c53030;
+}
+
+.fg.has-error .ferr {
+  display: block;
+}

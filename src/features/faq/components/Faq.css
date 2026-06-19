@@ -1,0 +1,117 @@
+.faq-bg {
+  background: var(--bg);
+  transition: background 0.4s;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.faq-sub {
+  color: var(--text-mid);
+  font-size: 0.9rem;
+}
+
+.faq-cta {
+  margin-top: 0.5rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.faq-item {
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.faq-item.open {
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+}
+
+.faq-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.15rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--navy);
+  transition: background 0.2s;
+}
+
+[data-theme="dark"] .faq-btn {
+  color: #c8deff;
+}
+
+.faq-btn:hover {
+  background: var(--bg2);
+}
+
+.faq-btn:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+}
+
+.faq-btn:active {
+  background: var(--bg3);
+}
+
+.faq-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--accent);
+  transition: background 0.2s, transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.faq-item.open .faq-arrow {
+  background: var(--accent);
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.42s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 1.4rem 1.2rem;
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+
+@media (max-width: 1024px) {
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

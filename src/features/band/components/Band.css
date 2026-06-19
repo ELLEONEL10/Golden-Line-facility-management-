@@ -1,0 +1,55 @@
+.band {
+  background: var(--navy);
+  padding: 3.2rem 2rem;
+  transition: background 0.4s;
+}
+
+[data-theme="dark"] .band {
+  background: #040c1a;
+}
+
+.band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.band-num {
+  font-family: "Sora", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  display: block;
+}
+
+.band-label {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 6px;
+  display: block;
+}
+
+.band-item {
+  cursor: default;
+}
+
+.band-item:hover .band-num {
+  animation: countPop 0.4s ease;
+}
+
+@media (max-width: 1024px) {
+  .band-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .band-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+}
