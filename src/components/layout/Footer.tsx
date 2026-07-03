@@ -56,7 +56,7 @@ export function Footer() {
           </div>
           <div className="f-col">
             <h4>{tr(lang, "footer.contact")}</h4>
-            <div className="f-ci">📍 <span>Bundesweit Deutschland<br />Für Standortinformationen kontaktieren Sie uns</span></div>
+            <div className="f-ci">📍 <a href="https://maps.google.com/?q=Gerlachstr.+31-33+14480+Potsdam" target="_blank" rel="noopener noreferrer">Gerlachstr. 31-33, 14480 Potsdam</a></div>
             <div className="f-ci">📞 <a href="tel:+4916096383001">+49 160 963-83001</a></div>
             <div className="f-ci">✉ <a href="mailto:info@gl-fm.de">info@gl-fm.de</a></div>
             <div className="f-ci">🕐 <span>Mo–Fr 08:00–18:00</span></div>

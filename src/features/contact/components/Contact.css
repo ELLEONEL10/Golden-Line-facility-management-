@@ -107,6 +107,65 @@
   transform: translateY(-1px) scale(0.97);
 }
 
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.social-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  white-space: nowrap;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.social-btn:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.social-btn[aria-label="TikTok"]:hover {
+  background: #000;
+}
+
+.social-btn[aria-label="Instagram"]:hover {
+  background: #e4405f;
+}
+
+.social-btn[aria-label="Facebook"]:hover {
+  background: #1877f2;
+}
+
+[data-theme="dark"] .social-btn {
+  background: #1e3a5f;
+}
+
 .form-card {
   background: var(--card-bg);
   border-radius: 24px;
