@@ -310,7 +310,51 @@
     display: none;
   }
 
-  .hamburger {
+.nav-branch-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 50px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.nav-branch-badge:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.nav-branch-badge:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 50px;
+}
+
+.branch-icon {
+  font-size: 0.65rem;
+  color: var(--gold);
+}
+
+.branch-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nav-branch-badge {
+    display: none;
+  }
+}
+
+.hamburger {
     display: flex;
   }
 }

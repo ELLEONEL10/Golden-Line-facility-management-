@@ -62,7 +62,17 @@ export function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Golden Line Facility Management GmbH</span>
+          <div className="footer-bottom-left">
+            <span>© 2026 Golden Line Facility Management GmbH</span>
+            <a
+              href="https://reinigungsservice-potsdam.de/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-branch-link"
+            >
+              <span className="footer-branch-dot">◈</span> Ein Unternehmen der GlamPotsdam Gruppe
+            </a>
+          </div>
           <div>
             <Link className="footer-link-btn" to="/impressum">{tr(lang, "footer.impr")}</Link> &nbsp;·&nbsp;
             <Link className="footer-link-btn" to="/datenschutz">{tr(lang, "footer.privacy")}</Link>

@@ -60,6 +60,16 @@ export function Navbar() {
             <div className="logo-txt">Golden Line</div>
             <div className="logo-sub">Facility Management</div>
           </div>
+          <a
+            href="https://reinigungsservice-potsdam.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-branch-badge"
+            title="Ein Unternehmen der GlamPotsdam Gruppe"
+          >
+            <span className="branch-icon">◈</span>
+            <span className="branch-text">GlamPotsdam Gruppe</span>
+          </a>
         </Link>
 
         <ul className="nav-links">
