@@ -13,8 +13,8 @@ const CONTACT_INFO: {
   valueKey?: string;
   href?: string;
 }[] = [
-  { icon: "📞", labelKey: "ci.phone", value: "(+49) 30 555-123456", href: "tel:+4930555123456" },
-  { icon: "✉", labelKey: "ci.email", value: "info@golden-line-fm.de", href: "mailto:info@golden-line-fm.de" },
+  { icon: "📞", labelKey: "ci.phone", value: "+49 160 963-83001", href: "tel:+4916096383001" },
+  { icon: "✉", labelKey: "ci.email", value: "info@gl-fm.de", href: "mailto:info@gl-fm.de" },
   { icon: "📍", labelKey: "ci.address", value: "Kontaktieren Sie uns für Ihre Region" },
   { icon: "🌍", labelKey: "ci.region", valueKey: "ci.regionval" },
   { icon: "🕐", labelKey: "ci.hours", value: "Mo–Fr 08:00–18:00 Uhr" },
@@ -127,7 +127,7 @@ export function Contact() {
             </ul>
 
             <a
-              href="https://wa.me/4930555123456"
+              href="https://wa.me/4916096383001"
               className="wa-btn"
               target="_blank"
               rel="noopener noreferrer"
@@ -147,8 +147,8 @@ export function Contact() {
                   <h3>{tr(lang, "form.ok.title")}</h3>
                   <p>
                     {tr(lang, "form.ok.desc")}
-                    <a href="tel:+4930555123456" className="gdpr-link">
-                      +49 30 555-123456
+                    <a href="tel:+4916096383001" className="gdpr-link">
+                      +49 160 963-83001
                     </a>
                   </p>
                 </div>
@@ -266,11 +266,11 @@ export function Contact() {
     <Modal open={dschOpen} onClose={() => setDschOpen(false)} title="Datenschutzerklärung">
       <h2>1. Verantwortlicher</h2>
       <p><strong>Golden Line Facility Management GmbH</strong><br />
-      Deutschland<br />E-Mail: info@golden-line-fm.de<br />Telefon: (+49) 30 555-123456</p>
+      Deutschland<br />E-Mail: info@gl-fm.de<br />Telefon: +49 160 963-83001</p>
       <h2>2. Kontaktformular</h2>
       <p>Wenn Sie unser Kontaktformular ausfüllen, werden folgende Daten erhoben: Name, E-Mail, Telefon, Leistungsinteresse, Nachricht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Die Daten werden nach Abschluss der Bearbeitung gelöscht.</p>
       <h2>3. Ihre Rechte (DSGVO)</h2>
-      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenportabilität und Widerspruch. Kontaktieren Sie uns: info@golden-line-fm.de</p>
+      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenportabilität und Widerspruch. Kontaktieren Sie uns: info@gl-fm.de</p>
     </Modal>
     </section>
   );

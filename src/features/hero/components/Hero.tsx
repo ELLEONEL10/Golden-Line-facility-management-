@@ -51,7 +51,7 @@ export function Hero() {
 
           <div className="hero-ctas">
             <a href="#anfrage" className="btn-gold">✉ <span>{tr(lang, "hero.cta1")}</span></a>
-            <a href="tel:+4930555123456" className="btn-outline">📞 +49 30 555-123456</a>
+            <a href="tel:+4916096383001" className="btn-outline">📞 +49 160 963-83001</a>
           </div>
 
           <div className="trust-row">

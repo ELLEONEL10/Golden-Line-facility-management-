@@ -26,9 +26,11 @@ export function Footer() {
             <img src={fullLogoImg} alt="Golden Line Facility Management Logo" className="footer-logo" loading="lazy" />
             <p className="f-desc">{tr(lang, "footer.desc")}</p>
             <div className="f-social">
-              <a href="#" className="f-soc-btn" aria-label="Facebook">f</a>
+              <a href="https://www.facebook.com/profile.php?id=61591700787343" className="f-soc-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+              <a href="https://www.instagram.com/glfm.ug/" className="f-soc-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+              <a href="https://www.tiktok.com/@glfm.ug" className="f-soc-btn" aria-label="TikTok" target="_blank" rel="noopener noreferrer">♪</a>
               <a href="https://wa.me/4916096383001" className="f-soc-btn" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">W</a>
-              <a href="mailto:info@reinigungsservice-potsdam.de" className="f-soc-btn" aria-label="Email">✉</a>
+              <a href="mailto:info@gl-fm.de" className="f-soc-btn" aria-label="Email">✉</a>
             </div>
           </div>
           <div className="f-col">
@@ -55,8 +57,8 @@ export function Footer() {
           <div className="f-col">
             <h4>{tr(lang, "footer.contact")}</h4>
             <div className="f-ci">📍 <span>Bundesweit Deutschland<br />Für Standortinformationen kontaktieren Sie uns</span></div>
-            <div className="f-ci">📞 <a href="tel:+4930555123456">(+49) 30 555-123456</a></div>
-            <div className="f-ci">✉ <a href="mailto:info@golden-line-fm.de">info@golden-line-fm.de</a></div>
+            <div className="f-ci">📞 <a href="tel:+4916096383001">+49 160 963-83001</a></div>
+            <div className="f-ci">✉ <a href="mailto:info@gl-fm.de">info@gl-fm.de</a></div>
             <div className="f-ci">🕐 <span>Mo–Fr 08:00–18:00</span></div>
             <div className="f-ci">🌍 <span>Bundesweit Deutschland</span></div>
           </div>
