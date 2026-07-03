@@ -24,11 +24,11 @@ jobs:
       run: npm run build
       
     - name: 📂 Sync files to IONOS via SFTP
-      uses: wlixcc/SFTP-Deploy-Action@v6.1.1
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.6
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 22
-        local_path: './build/*' 
+        local_path: './dist/*' 
         remote_path: '/'
