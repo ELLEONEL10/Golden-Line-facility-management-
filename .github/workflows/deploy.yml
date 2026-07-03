@@ -32,3 +32,4 @@ jobs:
         port: 22
         local_path: './dist/*' 
         remote_path: '/gl-fm'
+        sftp_only: true
