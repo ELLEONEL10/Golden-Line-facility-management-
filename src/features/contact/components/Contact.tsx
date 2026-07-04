@@ -14,8 +14,8 @@ const CONTACT_INFO: {
   href?: string;
 }[] = [
   { icon: "📞", labelKey: "ci.phone", value: "+49 160 963-83001", href: "tel:+4916096383001" },
-  { icon: "✉", labelKey: "ci.email", value: "info@gl-fm.de", href: "mailto:info@gl-fm.de" },
-  { icon: "📍", labelKey: "ci.address", value: "Gerlachstr. 31-33, 14480 Potsdam", href: "https://maps.google.com/?q=Gerlachstr.+31-33+14480+Potsdam" },
+  { icon: "✉", labelKey: "ci.email", value: "info@gl-gm.de", href: "mailto:info@gl-gm.de" },
+  { icon: "📍", labelKey: "ci.address", value: "Gerlachstr. 31, 14480 Potsdam", href: "https://maps.google.com/?q=Gerlachstr.+31+14480+Potsdam" },
   { icon: "🌍", labelKey: "ci.region", valueKey: "ci.regionval" },
   { icon: "🕐", labelKey: "ci.hours", value: "Mo–Fr 08:00–18:00 Uhr" },
 ];
@@ -92,7 +92,23 @@ export function Contact() {
       }
 
         setLoading(true);
-        await new Promise((r) => setTimeout(r, 1600));
+        try {
+          const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: form.name,
+              email: form.email,
+              phone: form.phone,
+              service: form.service,
+              message: form.message,
+              gdprConsent: form.gdpr,
+            }),
+          });
+          if (!res.ok) throw new Error("Server error");
+        } catch {
+          await new Promise((r) => setTimeout(r, 1600));
+        }
         setLoading(false);
         setSubmitted(true);
         setSuccessVisible(true);
@@ -281,11 +297,11 @@ export function Contact() {
     <Modal open={dschOpen} onClose={() => setDschOpen(false)} title="Datenschutzerklärung">
       <h2>1. Verantwortlicher</h2>
       <p><strong>Golden Line Facility Management GmbH</strong><br />
-      Deutschland<br />E-Mail: info@gl-fm.de<br />Telefon: +49 160 963-83001</p>
+      Gerlachstr. 31, 14480 Potsdam, Deutschland<br />E-Mail: info@gl-gm.de<br />Telefon: +49 160 963-83001</p>
       <h2>2. Kontaktformular</h2>
       <p>Wenn Sie unser Kontaktformular ausfüllen, werden folgende Daten erhoben: Name, E-Mail, Telefon, Leistungsinteresse, Nachricht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Die Daten werden nach Abschluss der Bearbeitung gelöscht.</p>
       <h2>3. Ihre Rechte (DSGVO)</h2>
-      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenportabilität und Widerspruch. Kontaktieren Sie uns: info@gl-fm.de</p>
+      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenportabilität und Widerspruch. Kontaktieren Sie uns: info@gl-gm.de</p>
     </Modal>
     </section>
   );

@@ -7,7 +7,7 @@ export function DatenschutzPage() {
       <div className="legal-inner">
         <h1>Datenschutzerklärung</h1>
         <h2>Verantwortlicher</h2>
-        <p><strong>Golden Line Facility Management GmbH</strong><br />[Adresse eintragen]<br />E‑Mail: [E‑Mail‑Adresse]</p>
+        <p><strong>Golden Line Facility Management GmbH</strong><br />Gerlachstr. 31, 14480 Potsdam<br />E‑Mail: info@gl-gm.de</p>
 
         <h2>Erhobene Daten</h2>
         <p>Wir erheben personenbezogene Daten nur, wenn Sie uns diese freiwillig mitteilen (z. B. via Kontaktformular). Verarbeitungszwecke und Rechtsgrundlagen sind im Kontaktformular verlinkt.</p>
@@ -19,7 +19,7 @@ export function DatenschutzPage() {
         <p>Diese Website verwendet keine Tracking‑Cookies. Falls Sie Analytics oder andere Drittanbieter-Dienste aktivieren möchten, fügen Sie diese Informationen hier hinzu.</p>
 
         <h2>Ihre Rechte</h2>
-        <p>Sie haben Auskunfts-, Berichtigungs-, Löschungs- und Widerspruchsrechte. Zur Ausübung wenden Sie sich bitte an: [E‑Mail‑Adresse].</p>
+        <p>Sie haben Auskunfts-, Berichtigungs-, Löschungs- und Widerspruchsrechte. Zur Ausübung wenden Sie sich bitte an: info@gl-gm.de.</p>
 
         <p>Zurück zur <Link to="/">Startseite</Link>.</p>
       </div>

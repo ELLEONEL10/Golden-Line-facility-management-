@@ -64,6 +64,36 @@ footer {
   outline-offset: 2px;
 }
 
+.f-soc-btn:hover[aria-label="Facebook"] {
+  background: #1877f2;
+  color: #fff;
+  border-color: #1877f2;
+}
+
+.f-soc-btn:hover[aria-label="Instagram"] {
+  background: #e4405f;
+  color: #fff;
+  border-color: #e4405f;
+}
+
+.f-soc-btn:hover[aria-label="TikTok"] {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.f-soc-btn:hover[aria-label="WhatsApp"] {
+  background: #25d366;
+  color: #fff;
+  border-color: #25d366;
+}
+
+.f-soc-btn:hover[aria-label="Email"] {
+  background: var(--accent);
+  color: var(--navy);
+  border-color: var(--accent);
+}
+
 .f-soc-btn:active {
   transform: scale(0.9);
 }

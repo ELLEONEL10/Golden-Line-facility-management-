@@ -9,8 +9,8 @@ export function ImpressumPage() {
         <h2>Angaben gemäß § 5 TMG</h2>
         <p><strong>Unternehmensname:</strong> Golden Line Facility Management GmbH</p>
         <p><strong>Geschäftsführer / Inhaber:</strong> [Bitte Namen eintragen]</p>
-        <p><strong>Adresse:</strong> [Straße, Hausnummer, PLZ, Ort]</p>
-        <p><strong>Kontakt:</strong> Telefon: [Telefonnummer] · E‑Mail: [E‑Mail-Adresse]</p>
+        <p><strong>Adresse:</strong> Gerlachstr. 31, 14480 Potsdam</p>
+        <p><strong>Kontakt:</strong> Telefon: +49 160 963-83001 · E‑Mail: info@gl-gm.de</p>
 
         <h2>Handelsregister</h2>
         <p>Registergericht: [Amtsgericht] · Registernummer: [HRB ...]</p>
