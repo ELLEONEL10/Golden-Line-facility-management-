@@ -413,6 +413,7 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
     text-align: center;
+    padding: 7rem 2rem 4rem;
   }
 
   .hero-ctas,
