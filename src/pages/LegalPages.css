@@ -77,6 +77,40 @@
   }
 }
 
+.legal-group-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--navy), var(--accent));
+  color: #fff !important;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.82rem !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.legal-back {
+  margin-top: 2rem !important;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.legal-inner ul {
+  color: var(--text-mid);
+  line-height: 1.75;
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.legal-inner ul li {
+  margin-bottom: 0.25rem;
+}
+
+[data-theme="dark"] .legal-inner ul li {
+  color: #a0b4cc;
+}
+
 @media (max-width: 480px) {
   .legal-page {
     padding: calc(60px + 1.5rem) 0.5rem 2rem;

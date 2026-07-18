@@ -24,9 +24,9 @@ function TopBar() {
             +49 160 963-83001
           </a>
           <span className="top-bar-sep">|</span>
-          <a href="mailto:info@gl-gm.de" className="top-bar-link">
+          <a href="mailto:info@gl-fm.de" className="top-bar-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm16 4l-8 5-8-5v2l8 5 8-5V8z"/></svg>
-            info@gl-gm.de
+            info@gl-fm.de
           </a>
         </div>
         <div className="top-bar-right">

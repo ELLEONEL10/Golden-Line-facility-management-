@@ -136,6 +136,26 @@
   letter-spacing: 0.04em;
 }
 
+.hero-group-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.2rem;
+}
+
+.hgb-dot {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
 .hero-locs {
   display: flex;
   align-items: center;

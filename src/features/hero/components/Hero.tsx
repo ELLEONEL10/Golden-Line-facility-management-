@@ -43,6 +43,11 @@ export function Hero() {
 
           <p className="hero-sub">{tr(lang, "hero.tagline")}</p>
 
+          <div className="hero-group-badge">
+            <span className="hgb-dot">◈</span>
+            <span>{tr(lang, "hero.group")}</span>
+          </div>
+
           <div className="hero-locs">
             <span className="loc-pill">🇩🇪 Deutschland</span>
             <span className="loc-pill">📞 24/7 Support</span>
