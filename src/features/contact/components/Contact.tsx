@@ -93,20 +93,19 @@ export function Contact() {
 
         setLoading(true);
         try {
-          const res = await fetch("https://formsubmit.co/info@gl-fm.de", {
+          const res = await fetch("/api/contact.php", {
             method: "POST",
-            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              _subject: "Neue Anfrage – Golden Line Facility Management",
               name: form.name,
               email: form.email,
               phone: form.phone,
               service: form.service,
               message: form.message,
-              gdprConsent: form.gdpr ? "Ja" : "Nein",
             }),
           });
-          if (!res.ok) throw new Error("Server error");
+          const data = await res.json();
+          if (!res.ok || data.error) throw new Error(data.error || "Server error");
         } catch {
           setSubmitError(true);
           setLoading(false);
