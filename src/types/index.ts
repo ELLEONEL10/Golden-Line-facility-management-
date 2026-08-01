@@ -32,3 +32,9 @@ export interface ContactInfoItem {
   value: string;
   href?: string;
 }
+
+export interface TeamMember {
+  name: string;
+  roleKey: string;
+  img: string;
+}

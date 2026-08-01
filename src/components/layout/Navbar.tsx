@@ -93,7 +93,7 @@ export function Navbar() {
             <div className="logo-sub">Facility Management</div>
           </div>
           <a
-            href="https://reinigungsservice-potsdam.de/"
+            href="https://www.gl-fm.de/"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-branch-badge"

@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Email templates (local only)
+emails
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

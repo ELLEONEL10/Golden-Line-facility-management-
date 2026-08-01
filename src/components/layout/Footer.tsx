@@ -77,7 +77,7 @@ export function Footer() {
           <div className="footer-bottom-left">
             <span>© 2026 Golden Line Facility Management GmbH</span>
             <a
-              href="https://reinigungsservice-potsdam.de/"
+              href="https://www.gl-fm.de/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-branch-link"

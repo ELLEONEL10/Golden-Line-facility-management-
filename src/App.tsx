@@ -5,6 +5,7 @@ import { Band } from "@/features/band";
 import { Services } from "@/features/services";
 import { Packages } from "@/features/packages";
 import { About } from "@/features/about";
+import { Team } from "@/features/team";
 import { Reviews } from "@/features/reviews";
 import { Contact } from "@/features/contact";
 import { Faq } from "@/features/faq";
@@ -24,6 +25,7 @@ export function HomePage() {
       <Packages />
       <Services />
       <About />
+      <Team />
       <Reviews />
       <Contact />
       <Faq />
